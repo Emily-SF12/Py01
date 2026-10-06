@@ -23,25 +23,18 @@ class Plant:
         self.age_days += days
 
 
-def print_days(plant: Plant, days: int) -> None:
-    init_size: float = plant.height_cm
-    print("=== Garden Plant Growth ===")
-    Plant.show(plant)
-    for day in range(1, days + 1):
-        print(f"=== Day {day} ===")
-        Plant.grow(plant, 1)
-        Plant.age(plant, 1)
-        Plant.show(plant)
-    print(f"Growth this week: {plant.height_cm - init_size:.2f}")
-
-
 def main() -> None:
     rose = Plant("Rose", 25, 30)
-    print_days(rose, 7)
-    # sunflower = Plant("Sunflower", 80, 45)
-    # print_days(sunflower, 7)
-    # cactus = Plant("Cactus", 15, 120)
-    # print_days(cactus, 7)
+    oak = Plant("Oak", 200, 365)
+    cactus = Plant("Cactus", 5, 90)
+    sunflower = Plant("Sunflower", 80, 45)
+    fern = Plant("Fern", 15, 120)
+
+    plants: list[Plant] = [rose, oak, cactus, sunflower, fern]
+
+    for plant in plants:
+        print("Created:", end=" ")
+        Plant.show(plant)
 
 
 if __name__ == "__main__":
