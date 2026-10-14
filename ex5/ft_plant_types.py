@@ -34,7 +34,8 @@ class Plant:
             self._age_days = new_age
 
     def show(self) -> None:
-        print(f"{self._name}: {self._height_cm:.2f}cm, {self._age_days} days old")
+        print(f"{self._name}: {self._height_cm:.1f}cm, "
+              f"{self._age_days} days old")
 
     def grow(self, days: int) -> None:
         self._height_cm += days * self._growth
@@ -49,7 +50,7 @@ class Flower(Plant):
                  age_days: int,
                  growth: float,
                  color: str,
-                 is_bloomed: bool):
+                 is_bloomed: bool) -> None:
         super().__init__(name, height_cm, age_days, growth)
         self._color = color
         self._is_bloomed = is_bloomed
@@ -61,9 +62,9 @@ class Flower(Plant):
         super().show()
         print(f" Color: {self._color}")
         if self._is_bloomed is False:
-            print(f" {self._name} is not bloomed yet")
+            print(f" {self._name} has not bloomed yet")
         else:
-            print(f" {self._name} is blooming beatufully!")
+            print(f" {self._name} is blooming beautifully!")
 
 
 class Tree(Plant):
@@ -71,17 +72,18 @@ class Tree(Plant):
                  height_cm: float,
                  age_days: int,
                  growth: float,
-                 trunk_diamater: float):
+                 trunk_diameter: float) -> None:
         super().__init__(name, height_cm, age_days, growth)
-        self._trunk_diamater = trunk_diamater
+        self._trunk_diameter = trunk_diameter
 
     def produce_shade(self) -> None:
-        print(f"Tree {self._name} now produces a shade of {self._height_cm:.1f}",
-              f"long and {self._trunk_diamater:.1f} wide")
+        print(f"Tree {self._name} now produces a shade of "
+              f"{self._height_cm:.1f}cm",
+              f"long and {self._trunk_diameter:.1f}cm wide")
 
     def show(self) -> None:
         super().show()
-        print(f" Trunk diamater: {self._trunk_diamater:.1f}")
+        print(f" Trunk diameter: {self._trunk_diameter:.1f}cm")
 
 
 class Vegetable(Plant):
@@ -90,7 +92,7 @@ class Vegetable(Plant):
                  age_days: int,
                  growth: float,
                  harvest_season: str,
-                 nutritional_value: int):
+                 nutritional_value: int) -> None:
         super().__init__(name, height_cm, age_days, growth)
         self._harvest_season = harvest_season
         self._nutritional_value = nutritional_value
@@ -102,6 +104,9 @@ class Vegetable(Plant):
 
     def grow(self, days: int) -> None:
         super().grow(days)
+
+    def age(self, days: int) -> None:
+        super().age(days)
         self._nutritional_value += days
 
 
