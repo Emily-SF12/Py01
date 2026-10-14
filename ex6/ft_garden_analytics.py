@@ -150,7 +150,7 @@ class Tree(Plant):
         self.stats.add_shade()
         print(f"Tree {self._name} now produces a shade of "
               f"{self._height_cm:.1f}cm",
-              f"long and {self._trunk_diameter:.1f}cm wide")
+              f"long and {self._trunk_diameter:.1f}cm wide.")
 
     def show(self) -> None:
         super().show()
