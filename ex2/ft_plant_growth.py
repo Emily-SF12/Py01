@@ -10,7 +10,7 @@ class Plant:
         self.growth = growth
 
     def show(self) -> None:
-        print(f"{self.name}: {self.height_cm:.2f}cm, {self.age_days} days old")
+        print(f"{self.name}: {self.height_cm:.1f}cm, {self.age_days} days old")
 
     def grow(self, days: int) -> None:
         self.height_cm += days * self.growth
@@ -28,7 +28,7 @@ def print_days(plant: Plant, days: int) -> None:
         Plant.grow(plant, 1)
         Plant.age(plant, 1)
         Plant.show(plant)
-    print(f"Growth this week: {plant.height_cm - init_size:.2f}")
+    print(f"Growth this week: {plant.height_cm - init_size:.1f}")
 
 
 def main() -> None:

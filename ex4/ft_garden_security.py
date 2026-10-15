@@ -35,7 +35,8 @@ class Plant:
             self._age_days = new_age
 
     def show(self) -> None:
-        print(f"{self._name}: {self._height_cm:.2f}cm, {self._age_days} days old")
+        print(f"{self._name}: {self._height_cm:.1f}cm, "
+              "{self._age_days} days old")
 
     def grow(self, days: int) -> None:
         self._height_cm += days * self._growth
@@ -57,7 +58,7 @@ def main() -> None:
     Plant.set_height(rose, -5.2)
     Plant.set_age(rose, -20)
     print(f"\nCurrent state: {rose._name}:", end=" ")
-    print(f"{rose._height_cm:.2f}cm, {rose._age_days} days old")
+    print(f"{rose._height_cm:.1f}cm, {rose._age_days} days old")
 
 
 if __name__ == "__main__":
