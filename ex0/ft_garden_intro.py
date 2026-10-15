@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def ft_garden_intro() -> None:
     name: str = "Rose"
     height_cm: int = 25
