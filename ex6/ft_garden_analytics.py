@@ -181,6 +181,11 @@ class Vegetable(Plant):
         self._nutritional_value += days
 
 
+def print_stats(plant: Plant) -> None:
+    print(f"[statistics for {plant._name}]")
+    plant.stats.display()
+
+
 def main() -> None:
     rose = Flower("Rose", 15, 10, 1.2, "red", False)
     oak = Tree("Oak", 200, 365, 2.5, 5)
@@ -195,23 +200,19 @@ def main() -> None:
     print("\n")
     print("=== Flower")
     rose.show()
-    print("[statistics for Rose]")
-    rose.stats.display()
+    print_stats(rose)
     print("[asking the rose to grow and bloom]")
     rose.grow(0, 8.0)
     rose.bloom()
     rose.show()
-    print("[statistics for Rose]")
-    rose.stats.display()
+    print_stats(rose)
     print("\n")
     print("=== Tree")
     oak.show()
-    print("[statistics for Oak]")
-    oak.stats.display()
+    print_stats(oak)
     print("[asking the oak to produce shade]")
     oak.produce_shade()
-    print("[statistics for Oak]")
-    oak.stats.display()
+    print_stats(oak)
     print("\n")
     print("=== Seed")
     sunflower.show()
@@ -220,13 +221,11 @@ def main() -> None:
     sunflower.grow(20, 0)
     sunflower.bloom()
     sunflower.show()
-    print("[statistics for Sunflower]")
-    sunflower.stats.display()
+    print_stats(sunflower)
     print("\n")
     print("=== Anonymous")
     anonymous.show()
-    print("[statistics for Unknown plant]")
-    anonymous.stats.display()
+    print_stats(anonymous)
 
 
 if __name__ == "__main__":
